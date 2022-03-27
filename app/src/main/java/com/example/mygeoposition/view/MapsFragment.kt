@@ -94,7 +94,7 @@ class MapsFragment : Fragment() {
 
     @SuppressLint("MissingPermission")
     private fun checkLocationPermission() {
-        var myTempLocation = LatLng(0.0,0.0)
+        myLocation = LatLng(0.0,0.0)
         val task: Task<Location> = fusedLocationProviderClient.lastLocation
         if (ActivityCompat.checkSelfPermission(
                 requireContext(),
@@ -111,8 +111,7 @@ class MapsFragment : Fragment() {
             return
         }
         task.addOnSuccessListener {
-            myTempLocation = LatLng(it.latitude, it.longitude)
-            myLocation = myTempLocation
+            myLocation = LatLng(it.latitude, it.longitude)
         }
 
     }
