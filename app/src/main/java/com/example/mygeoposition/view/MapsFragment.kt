@@ -125,4 +125,5 @@ class MapsFragment : Fragment() {
         fun newInstance() = MapsFragment()
         var MARKERSLIST = PlaceRepository().getMarkersList()
     }
+
 }
